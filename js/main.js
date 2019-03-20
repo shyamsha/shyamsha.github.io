@@ -87,6 +87,7 @@ $(document).ready(function() {
 				"Designer.",
 				"Developer.",
 				//"Freelancer.",
+				"Journeyer",
 				"Photographer"
 			],
 			typeSpeed: 100,
