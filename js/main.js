@@ -131,7 +131,7 @@ $(document).ready(function() {
 
 	var magnifPopup = function() {
 		$(".popup-img").magnificPopup({
-			type: "image",
+			type: "text",
 			removalDelay: 300,
 			mainClass: "mfp-with-zoom",
 			gallery: {
@@ -158,5 +158,5 @@ $(document).ready(function() {
 	};
 
 	// Call the functions
-	magnifPopup();
+	//magnifPopup();
 });
