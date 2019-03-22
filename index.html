@@ -453,10 +453,9 @@
 												class="form-control"
 												id="name"
 												placeholder="Your Name"
-												minLength="3"
 												required
 												autoFocus
-												pattern="\w*"
+												pattern="^.{3,25}$"
 												title="must be alphanumeric"
 												data-rule="minlen:4"
 												data-msg="Please enter at least 4 chars"
@@ -493,8 +492,8 @@
 												placeholder="Subject"
 												minLength="8"
 												required
-												pattern="\w*"
-												title="must be alphanumeric"
+												pattern="^.{8,50}$"
+												title="write Your subject less than 50 characters"
 												data-rule="minlen:4"
 												data-msg="Please enter at least 8 chars of subject"
 											/>
@@ -512,8 +511,8 @@
 												data-msg="Please write something for us"
 												placeholder="Message"
 												required
-												pattern="^(.|\n){0,160}$"
-												title="write proper format"
+												minlength="10"
+												maxlength="1000"
 											></textarea>
 											<div class="validation"></div>
 										</div>
