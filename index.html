@@ -1,608 +1,414 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<!-- meta -->
-		<meta charset="utf-8" />
-		<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Syam Kumar Cherukuri - Resume</title>
+    <style>
+        @media print {
+            body { margin: 0; }
+            .no-print { display: none; }
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.4;
+            color: #333;
+            background: white;
+            max-width: 8.5in;
+            margin: 0 auto;
+            padding: 0.5in;
+            font-size: 11pt;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 25px;
+            border-bottom: 2px solid #2c5aa0;
+            padding-bottom: 15px;
+        }
+        
+        .header h1 {
+            font-size: 24pt;
+            font-weight: bold;
+            color: #2c5aa0;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+        }
+        
+        .header .subtitle {
+            font-size: 14pt;
+            color: #666;
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            font-size: 10pt;
+            color: #555;
+        }
+        
+        .contact-info span {
+            display: flex;
+            align-items: center;
+            gap: 3px;
+        }
+        
+        .section {
+            margin-bottom: 20px;
+        }
+        
+        .section-title {
+            font-size: 14pt;
+            font-weight: bold;
+            color: #2c5aa0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 3px;
+        }
+        
+        .summary {
+            text-align: justify;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .skill-category {
+            margin-bottom: 10px;
+        }
+        
+        .skill-category-title {
+            font-weight: bold;
+            color: #444;
+            margin-bottom: 3px;
+            font-size: 10.5pt;
+        }
+        
+        .skill-list {
+            color: #666;
+            line-height: 1.4;
+        }
+        
+        .experience-item, .project-item {
+            margin-bottom: 15px;
+        }
+        
+        .job-header, .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 5px;
+        }
+        
+        .job-title, .project-title {
+            font-weight: bold;
+            color: #333;
+            font-size: 11.5pt;
+        }
+        
+        .company-name {
+            color: #2c5aa0;
+            font-weight: 500;
+        }
+        
+        .job-date {
+            color: #666;
+            font-size: 10pt;
+            font-style: italic;
+        }
+        
+        .tech-stack {
+            color: #2c5aa0;
+            font-size: 10pt;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+        
+        ul {
+            margin-left: 15px;
+            margin-bottom: 10px;
+        }
+        
+        li {
+            margin-bottom: 3px;
+            line-height: 1.4;
+        }
+        
+        .education-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+        
+        .degree {
+            font-weight: 500;
+        }
+        
+        .university {
+            color: #666;
+        }
+        
+        .highlight {
+            background-color: #fff3cd;
+            padding: 1px 3px;
+            border-radius: 2px;
+            font-weight: 500;
+        }
+        
+        .certifications {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+        }
+        
+        .additional-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 15px;
+            font-size: 10pt;
+        }
+        
+        .info-item {
+            text-align: center;
+        }
+        
+        .info-title {
+            font-weight: bold;
+            color: #2c5aa0;
+            margin-bottom: 3px;
+        }
+        
+        .print-instructions {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .print-btn {
+            background: #2c5aa0;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 12pt;
+            margin: 10px;
+        }
+        
+        .print-btn:hover {
+            background: #1e3d6f;
+        }
+        
+        @page {
+            margin: 0.5in;
+            size: letter;
+        }
+    </style>
+</head>
+<body>
+    <div class="no-print print-instructions">
+        <h3>📄 Ready to Print to PDF!</h3>
+        <p>Press <strong>Ctrl+P</strong> (or Cmd+P on Mac) and select "Save as PDF" or "Microsoft Print to PDF"</p>
+        <button class="print-btn" onclick="window.print()">🖨️ Print to PDF</button>
+        <p><small>Tip: Make sure "More settings" → "Headers and footers" is turned OFF for clean PDF</small></p>
+    </div>
 
-		<title>sHyaM Portfolio</title>
-		<meta content="" name="keywords" />
-		<meta content="" name="description" />
+    <div class="header">
+        <h1>SYAM KUMAR CHERUKURI</h1>
+        <div class="subtitle">Senior Frontend Engineer</div>
+        <div class="contact-info">
+            <span>📧 shyamkumar97@live.com</span>
+            <span>📱 +91-9849084994</span>
+            <span>📍 Podili, Andhra Pradesh, IN (Open to Remote)</span>
+            <span>💼 linkedin.com/in/syamkumar97</span>
+            <span>👨‍💻 github.com/syamkumar97</span>
+        </div>
+    </div>
 
-		<!-- Google Fonts -->
-		<link
-			href="https://fonts.googleapis.com/css?family=Poppins:300,300i,400,400i,500,500i,600,600i,700,700i|Playfair+Display:400,400i,700,700i,900,900i"
-			rel="stylesheet"
-		/>
+    <div class="section">
+        <div class="section-title">Professional Summary</div>
+        <div class="summary">
+            Senior Frontend Engineer with <span class="highlight">5+ years</span> of expertise in React ecosystem and TypeScript, specializing in scalable web applications that drive business growth. Proven track record of architecting component libraries used across multiple teams, resulting in <span class="highlight">40% faster development cycles</span> and consistent UI/UX standards. Strong collaborator with excellent problem-solving skills and passion for delivering exceptional user experiences.
+        </div>
+    </div>
 
-		<!-- Bootstrap CSS File -->
-		<link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <div class="section">
+        <div class="section-title">Technical Skills</div>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <div class="skill-category-title">Frontend Development</div>
+                <div class="skill-list">React • Next.js • JavaScript • TypeScript • Redux Toolkit • HTML5 • CSS3 • React Hooks • Context API</div>
+            </div>
+            <div class="skill-category">
+                <div class="skill-category-title">UI/UX & Styling</div>
+                <div class="skill-list">SCSS • Tailwind CSS • Material UI • Ant Design • Responsive Design • Cross-browser Compatibility • Accessibility (WCAG)</div>
+            </div>
+            <div class="skill-category">
+                <div class="skill-category-title">Testing & Quality Assurance</div>
+                <div class="skill-list">Jest • React Testing Library • Cypress • Unit Testing • Integration Testing • Chrome DevTools</div>
+            </div>
+            <div class="skill-category">
+                <div class="skill-category-title">Development Tools & Workflow</div>
+                <div class="skill-list">Webpack • Babel • NPM • Yarn • Git • GitHub • GitLab • Jira • Agile/Scrum • CI/CD</div>
+            </div>
+            <div class="skill-category">
+                <div class="skill-category-title">Backend & Integration</div>
+                <div class="skill-list">Node.js • Express.js • REST APIs • GraphQL • MongoDB • Microservices • API Integration</div>
+            </div>
+            <div class="skill-category">
+                <div class="skill-category-title">Cloud & Deployment</div>
+                <div class="skill-list">AWS • Docker • Vercel • Netlify • Performance Optimization • SEO</div>
+            </div>
+        </div>
+    </div>
 
-		<!-- Libraries CSS Files -->
-		<link href="lib/ionicons/css/ionicons.min.css" rel="stylesheet" />
-		<link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet" />
-		<link href="lib/magnific-popup/magnific-popup.css" rel="stylesheet" />
-		<link href="lib/hover/hover.min.css" rel="stylesheet" />
-
-		<!-- Main Stylesheet File -->
-		<link href="css/style.css" rel="stylesheet" />
-
-		<!-- Responsive css -->
-		<link href="css/responsive.css" rel="stylesheet" />
-
-		<!-- Favicon -->
-		<link rel="shortcut icon" href="images/icon-s.png" />
-
-		<!-- =======================================================
-    Theme Name: Folio
-    Theme URL: https://bootstrapmade.com/folio-bootstrap-portfolio-template/
-    Author: BootstrapMade.com
-    Author URL: https://bootstrapmade.com
-  ======================================================= -->
-	</head>
-
-	<body>
-		<!-- start section navbar -->
-		<nav id="main-nav">
-			<div class="row">
-				<div class="container">
-					<div class="logo">
-						<a href="index.html"><img src="images/logo.png" alt="logo"/></a>
-					</div>
-
-					<div class="responsive">
-						<i data-icon="m" class="ion-navicon-round"></i>
-					</div>
-
-					<ul class="nav-menu list-unstyled">
-						<li><a href="#header" class="smoothScroll">Home</a></li>
-						<li><a href="#about" class="smoothScroll">About</a></li>
-						<li><a href="#portfolio" class="smoothScroll">Projects</a></li>
-						<li><a href="#journal" class="smoothScroll">Articles</a></li>
-						<li><a href="#contact" class="smoothScroll">Contact</a></li>
-					</ul>
-				</div>
-			</div>
-		</nav>
-		<!-- End section navbar -->
-
-		<!-- start section header -->
-		<div id="header" class="home">
-			<div class="container">
-				<div class="header-content">
-					<h1>I'm <span class="typed">sHyaM</span></h1>
-					<p>designer, developer, Journeyer, photographer</p>
-
-					<ul class="list-unstyled list-social">
-						<li>
-							<a
-								href="https://www.linkedin.com/in/sHyaM9849084994"
-								target="_blank"
-								><i class="ion-social-linkedin"></i
-							></a>
-						</li>
-						<li>
-							<a href="https://github.com/shyamsha" target="_blank"
-								><i class="ion-social-github"></i
-							></a>
-						</li>
-						<!-- <li><a href="#"><i class="ion-social-twitter"></i></a></li> -->
-						<li>
-							<a
-								href="https://www.instagram.com/shyam.9849084994/"
-								target="_blank"
-								><i class="ion-social-instagram"></i
-							></a>
-						</li>
-						<li>
-							<a href="https://www.facebook.com/shyam.naidu.129" target="_blank"
-								><i class="ion-social-facebook"></i
-							></a>
-						</li>
-						<!-- <li><a href="#"><i class="ion-social-dribbble"></i></a></li> -->
-					</ul>
-				</div>
-			</div>
-		</div>
-		<!-- End section header -->
-
-		<!-- start section about us -->
-		<div id="about" class="paddsection">
-			<div class="container">
-				<div class="row justify-content-between">
-					<div class="col-lg-4 ">
-						<div class="div-img-bg">
-							<div class="about-img">
-								<img src="images/me1.png" class="img-responsive" alt="me" />
-							</div>
-						</div>
-					</div>
-
-					<div class="col-lg-7">
-						<div class="about-descr">
-							<p class="p-heading">
-								I'm a full-stack developer who loves clean, simple & unique
-								design. i also enjoy crafting brand identities, icons, &
-								ilustration work.
-							</p>
-							<p class="separator">
-								I am modest, but hard working and I consistently sets firm goals
-								for myself. Then, once I’ve defined the benchmarks,I take the
-								necessary steps to achieve those milestones.
-							</p>
-							<p>
-								I am someone who is mature, candid and who has integrity. Every
-								day I work to improve myself and my skills, which is part of
-								maturing and becoming better at what I do.
-							</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- end section about us -->
-
-		<!-- start section services -->
-		<div id="services">
-			<div class="container">
-				<div class="services-carousel owl-theme">
-					<div class="services-block">
-						<i class="ion-ios-browsers-outline"></i>
-						<span>UI/UX DESIGN</span>
-						<p class="separator">
-							I love to work together with software and design firms,
-							communicating application design principles and strategies for
-							ongoing development.Simplifying communication barriers by bridging
-							the gap between end-users, designers and developers.
-						</p>
-					</div>
-
-					<div class="services-block">
-						<i class="ion-ios-lightbulb-outline"></i>
-						<span>BRAND IDENTITY</span>
-						<p class="separator">
-							The primary objective of the brand identity development process is
-							to create a strong, comprehensive system of visual identity and
-							application, clarify the university's nomenclature, and help
-							standardize the application of the brand identity across the
-							university.
-						</p>
-					</div>
-
-					<div class="services-block">
-						<i class="ion-ios-color-wand-outline"></i>
-						<span>DEVELOPER</span>
-						<p class="separator">
-							I trained as full-stack developer and i am very familiar and
-							experienced with Web Applications and have worked with a good
-							number of successful projects, looking for the job of Entry Level
-							Web Developer and well knows, React,Redux, Javascript, Express,
-							MongoDB.
-						</p>
-					</div>
-
-					<!-- <div class="services-block">
-
-            <i class="ion-social-android-outline"></i>
-            <span>MOBILE APPS</span>
-            <p class="separator">To an English person, it will seem like simplified English,told me what </p>
-
-          </div>
-
-          <div class="services-block">
-
-            <i class="ion-ios-analytics-outline"></i>
-            <span>Analytics</span>
-            <p class="separator">To an English person, it will seem like simplified English,told me what </p>
-
-          </div> -->
-
-					<div class="services-block">
-						<i class="ion-ios-camera-outline"></i>
-						<span>JOURNEYER</span>
-						<p class="separator">
-							I love to roam around villages and cities to enjoy my self. More
-							likely to roam adventurously to see forests and meets tribal
-							peoples.
-						</p>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- end section services -->
-
-		<!-- start section portfolio -->
-		<div id="portfolio" class="text-center paddsection">
-			<div class="container">
-				<div class="section-title text-center">
-					<h2>My Projects</h2>
-					<p>Hover The Image And Click</p>
-				</div>
-			</div>
-
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12">
-						<!-- <div class="portfolio-list">
-
-            <ul class="nav list-unstyled" id="portfolio-flters">
-              <li class="filter filter-active" data-filter=".all">all</li>
-              <li class="filter" data-filter=".branding">branding</li>
-              <li class="filter" data-filter=".mockups">mockups</li>
-              <li class="filter" data-filter=".uikits">ui kits</li>
-              <li class="filter" data-filter=".webdesign">web design</li>
-              <li class="filter" data-filter=".photography">photography</li>
+    <div class="section">
+        <div class="section-title">Professional Experience</div>
+        
+        <div class="experience-item">
+            <div class="job-header">
+                <div>
+                    <div class="job-title">Frontend Engineer</div>
+                    <div class="company-name">Onpassive Technologies</div>
+                </div>
+                <div class="job-date">Nov 2023 - Jan 2024</div>
+            </div>
+            <ul>
+                <li>Built comprehensive component library used by 5+ product teams, <span class="highlight">improving development velocity by 20%</span></li>
+                <li>Collaborated with design and UX research teams to implement modern UI standards and accessibility guidelines</li>
+                <li>Documented component APIs and usage patterns, reducing developer onboarding time by 30%</li>
             </ul>
+        </div>
 
-          </div> -->
+        <div class="experience-item">
+            <div class="job-header">
+                <div>
+                    <div class="job-title">Software Engineer</div>
+                    <div class="company-name">Reckonsys Tech Labs</div>
+                </div>
+                <div class="job-date">Mar 2021 - Feb 2023</div>
+            </div>
+            <ul>
+                <li>Developed reusable React components and features, <span class="highlight">enhancing cross-browser compatibility by 30%</span></li>
+                <li>Optimized development workflows and code review processes, <span class="highlight">reducing delivery time by 20%</span></li>
+                <li>Conducted daily code reviews (3-4 PRs) ensuring code quality and knowledge sharing across team</li>
+                <li>Led technical discussions in Agile ceremonies, streamlining processes and reducing project timelines</li>
+                <li><span class="highlight">Earned Employee of the Month</span> for exceptional client relations and accessibility standard implementation</li>
+            </ul>
+        </div>
 
-						<div class="portfolio-container">
-							<div
-								class="col-lg-4 col-md-6 portfolio-thumbnail all branding uikits webdesign"
-							>
-								<a
-									class="popup-img"
-									href="https://redpantry.herokuapp.com/"
-									target="_blank"
-								>
-									<img
-										src="images/portfolio/e-commerce.jpg"
-										alt="img"
-										height="255"
-									/>
-								</a>
+        <div class="experience-item">
+            <div class="job-header">
+                <div>
+                    <div class="job-title">Software Engineer</div>
+                    <div class="company-name">Mindship LLC</div>
+                </div>
+                <div class="job-date">Jul 2019 - Aug 2020</div>
+            </div>
+            <ul>
+                <li>Built robust applications using React, TypeScript, and Redux, <span class="highlight">achieving 30% reduction in production bugs</span></li>
+                <li>Applied design patterns and clean code principles, improving application scalability and maintainability</li>
+                <li>Integrated client feedback and resolved performance bottlenecks during consultation phases</li>
+                <li>Mentored junior developers on best practices and modern frontend development techniques</li>
+            </ul>
+        </div>
+    </div>
 
-								<div class="content">
-									<h3>E-Commerce</h3>
-								</div>
-							</div>
+    <div class="section">
+        <div class="section-title">Key Projects</div>
+        
+        <div class="project-item">
+            <div class="project-header">
+                <div class="project-title">Trust Your Supplier - Enterprise B2B Platform</div>
+            </div>
+            <div class="tech-stack">Technologies: React • Node.js • TypeScript • AWS • Redux • Material UI</div>
+            <ul>
+                <li>Led Agile deployment of major system updates, <span class="highlight">reducing deployment errors by 30%</span> and improving performance by 25%</li>
+                <li>Delivered 10+ high-impact features including complete navigation redesign, <span class="highlight">cutting customer service complaints by 25%</span></li>
+                <li>Architected seamless frontend-backend integration using React and Node.js on AWS infrastructure</li>
+                <li>Implemented responsive design and accessibility features, ensuring WCAG 2.1 AA compliance</li>
+            </ul>
+        </div>
 
-							<div
-								class="col-lg-4 col-md-6 portfolio-thumbnail all mockups uikits photography"
-							>
-								<a
-									class="popup-img"
-									href="https://github.com/shyamsha/Task-Box"
-									target="_blank"
-								>
-									<img src="images/portfolio/2.jpg" alt="img" />
-								</a>
-								<div class="content">
-									<h3>Task Box</h3>
-								</div>
-							</div>
+        <div class="project-item">
+            <div class="project-header">
+                <div class="project-title">Signly - Digital E-Signature Platform</div>
+            </div>
+            <div class="tech-stack">Technologies: React.js • Python • Tailwind CSS • REST APIs • MongoDB</div>
+            <ul>
+                <li>Designed and launched comprehensive e-signature solution, <span class="highlight">eliminating 80% of paper-based processes</span></li>
+                <li>Streamlined document workflows achieving <span class="highlight">60% reduction in turnaround time</span> and boosting operational efficiency</li>
+                <li>Developed intuitive, accessible user interface using React.js and Tailwind CSS, increasing user adoption rates</li>
+                <li>Applied UX research principles to create user-centered design prioritizing ease of use and satisfaction</li>
+            </ul>
+        </div>
+    </div>
 
-							<div
-								class="col-lg-4 col-md-6 portfolio-thumbnail all branding webdesig photographyn"
-							>
-								<a
-									class="popup-img"
-									href="https://save-contact.herokuapp.com/"
-									target="_blank"
-								>
-									<img src="images/portfolio/3.jpg" alt="img" />
-								</a>
-								<div class="content">
-									<h3>Contact Manager</h3>
-								</div>
-							</div>
+    <div class="section">
+        <div class="section-title">Certifications</div>
+        <div class="certifications">
+            <div>• <strong>Frontend System Design</strong> - 2024</div>
+            <div>• <strong>Microsoft Certified Professional</strong> - HTML5 with JavaScript and CSS3 - 2016</div>
+        </div>
+    </div>
 
-							<div
-								class="col-lg-4 col-md-6 portfolio-thumbnail all mockups webdesign photography"
-							>
-								<a
-									class="popup-img"
-									href="https://github.com/shyamsha/Ticket-Master"
-									target="_blank"
-								>
-									<img src="images/portfolio/4.jpg" alt="img" />
-								</a>
-								<div class="content">
-									<h3>Ticket Master</h3>
-								</div>
-							</div>
+    <div class="section">
+        <div class="section-title">Education</div>
+        <div class="education-item">
+            <div>
+                <div class="degree">Master of Computer Application</div>
+                <div class="university">Jawaharlal Nehru Technological University</div>
+            </div>
+            <div class="job-date">2013-2016</div>
+        </div>
+        <div class="education-item">
+            <div>
+                <div class="degree">Bachelor of Computer Science</div>
+                <div class="university">Acharya Nagarjuna University</div>
+            </div>
+            <div class="job-date">2010-2013</div>
+        </div>
+    </div>
 
-							<div
-								class="col-lg-4 col-md-6 portfolio-thumbnail all branding uikits photography"
-							>
-								<a
-									class="popup-img"
-									href="https://github.com/shyamsha/URL-Shortener"
-									target="_blank"
-								>
-									<img src="images/portfolio/5.jpg" alt="img" />
-								</a>
-								<div class="content">
-									<h3>URL Shortener</h3>
-								</div>
-							</div>
-
-							<div
-								class="col-lg-4 col-md-6 portfolio-thumbnail all mockups uikits webdesign"
-							>
-								<a
-									class="popup-img"
-									href="https://github.com/shyamsha/Quotify"
-									target="_blank"
-								>
-									<img src="images/portfolio/6.jpg" alt="img" />
-								</a>
-								<div class="content">
-									<h3>Quotify</h3>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- End section portfolio -->
-
-		<!-- start section journal -->
-		<div id="journal" class="text-left paddsection">
-			<div class="container">
-				<div class="section-title text-center">
-					<h2>Articles I Love</h2>
-				</div>
-			</div>
-
-			<div class="container">
-				<div class="journal-block">
-					<div class="row">
-						<div class="col-lg-4 col-md-6">
-							<div class="journal-info">
-								<a
-									href="http://javascriptissexy.com/12-simple-yet-powerful-javascript-tips/"
-									target="_blank"
-									><img
-										src="images/blog-post-1.png"
-										class="img-responsive"
-										alt="img"
-										height="262"
-								/></a>
-
-								<div class="journal-txt">
-									<h4>
-										<a
-											href="http://javascriptissexy.com/12-simple-yet-powerful-javascript-tips/"
-											>12 Simple (Yet Powerful) JavaScript Tips</a
-										>
-									</h4>
-									<p class="separator">
-										By Richard Bovell, javascriptissexy.com
-									</p>
-								</div>
-							</div>
-						</div>
-
-						<div class="col-lg-4 col-md-6">
-							<div class="journal-info">
-								<a
-									href="https://hackernoon.com/the-definitive-guide-to-express-the-node-js-web-application-framework-649352e2ae87"
-									target="_blank"
-									><img
-										src="images/blog-post-2.jpeg"
-										class="img-responsive"
-										alt="img"
-								/></a>
-
-								<div class="journal-txt">
-									<h4>
-										<a
-											href="https://hackernoon.com/the-definitive-guide-to-express-the-node-js-web-application-framework-649352e2ae87"
-											target="_blank"
-											>The definitive guide to Express Framework and Node.js</a
-										>
-									</h4>
-									<p class="separator">
-										By Flavio Copes, flaviocopes.com
-									</p>
-								</div>
-							</div>
-						</div>
-
-						<div class="col-lg-4 col-md-6">
-							<div class="journal-info">
-								<a
-									href="https://hackernoon.com/react-js-a-better-introduction-to-the-most-powerful-ui-library-ever-created-ecd96e8f4621"
-									target="_blank"
-									><img
-										src="images/blog-post-3.jpg"
-										class="img-responsive"
-										alt="img"
-										height="262"
-								/></a>
-
-								<div class="journal-txt">
-									<h4>
-										<a
-											href="https://hackernoon.com/react-js-a-better-introduction-to-the-most-powerful-ui-library-ever-created-ecd96e8f4621"
-											target="_blank"
-											>React.js: A better introduction to the most powerful UI
-											library</a
-										>
-									</h4>
-									<p class="separator">
-										By Ilya Suzdalnitski, hackernoon.com
-									</p>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- End section journal -->
-
-		<!-- start sectoion contact -->
-		<div id="contact" class="paddsection">
-			<div class="container">
-				<div class="contact-block1">
-					<div class="row">
-						<div class="col-lg-6">
-							<div class="contact-contact">
-								<h2 class="mb-30">GET IN TOUCH</h2>
-
-								<ul class="contact-details">
-									<li><span>3rd Main, Street</span></li>
-									<li><span>Jayanager 1st block, Bangalore</span></li>
-									<li><span>India</span></li>
-									<li>Work:<span>+91 9739034119</span></li>
-									<li>Personal:<span>+91 9849084994</span></li>
-									<!-- <li><span>example@example.com</span></li> -->
-								</ul>
-							</div>
-						</div>
-
-						<div class="col-lg-6">
-							<form
-								action="https://formspree.io/shyamsha04@gmail.com"
-								method="POST"
-								role="form"
-								class="contactForm"
-								target="_blank"
-							>
-								<div class="row">
-									<div id="sendmessage">
-										Your message has been sent. Thank you! I will call back to
-										you
-									</div>
-									<div id="errormessage"></div>
-
-									<div class="col-lg-6">
-										<div class="form-group contact-block1">
-											<input
-												type="text"
-												name="name"
-												class="form-control"
-												id="name"
-												placeholder="Your Name"
-												required
-												pattern="^.{3,25}$"
-												title="must be alphanumeric"
-												data-rule="minlen:4"
-												data-msg="Please enter at least 4 chars"
-											/>
-											<div class="validation"></div>
-										</div>
-									</div>
-
-									<div class="col-lg-6">
-										<div class="form-group">
-											<input
-												type="email"
-												class="form-control"
-												name="email"
-												id="email"
-												placeholder="Your Email"
-												required
-												pattern="^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$"
-												title="example@example.com"
-												data-rule="email"
-												data-msg="Please enter a valid email"
-											/>
-											<div class="validation"></div>
-										</div>
-									</div>
-
-									<div class="col-lg-12">
-										<div class="form-group">
-											<input
-												type="text"
-												class="form-control"
-												name="subject"
-												id="subject"
-												placeholder="Subject"
-												minLength="8"
-												required
-												pattern="^.{8,120}$"
-												title="write Your subject less than 50 characters"
-												data-rule="minlen:4"
-												data-msg="Please enter at least 8 chars of subject"
-											/>
-											<div class="validation"></div>
-										</div>
-									</div>
-
-									<div class="col-lg-12">
-										<div class="form-group">
-											<textarea
-												class="form-control"
-												name="message"
-												rows="12"
-												data-rule="required"
-												data-msg="Please write something for us"
-												placeholder="Message"
-												required
-												minlength="10"
-												maxlength="1000"
-											></textarea>
-											<div class="validation"></div>
-										</div>
-									</div>
-
-									<div class="col-lg-12">
-										<input
-											type="submit"
-											class="btn btn-defeault btn-send"
-											value="Send message"
-										/>
-									</div>
-								</div>
-							</form>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- start sectoion contact -->
-
-		<!-- start section footer -->
-		<div id="footer" class="text-center">
-			<div class="container">
-				<div class="socials-media text-center">
-					<ul class="list-unstyled">
-						<li>
-							<a href="#"><i class="ion-social-facebook"></i></a>
-						</li>
-						<li>
-							<a href="#"><i class="ion-social-twitter"></i></a>
-						</li>
-						<li>
-							<a href="#"><i class="ion-social-instagram"></i></a>
-						</li>
-						<li>
-							<a href="#"><i class="ion-social-googleplus"></i></a>
-						</li>
-						<li>
-							<a href="#"><i class="ion-social-tumblr"></i></a>
-						</li>
-						<li>
-							<a href="#"><i class="ion-social-dribbble"></i></a>
-						</li>
-					</ul>
-				</div>
-
-				<p>&copy; Copyrights syam kumar cherukuri. All rights reserved.</p>
-
-				<!-- <div class="credits"></div> -->
-			</div>
-		</div>
-		<!-- End section footer -->
-
-		<!-- JavaScript Libraries -->
-		<script src="lib/jquery/jquery.min.js"></script>
-		<script src="lib/jquery/jquery-migrate.min.js"></script>
-		<script src="lib/bootstrap/js/bootstrap.bundle.min.js"></script>
-		<script src="lib/typed/typed.js"></script>
-		<script src="lib/owlcarousel/owl.carousel.min.js"></script>
-		<script src="lib/magnific-popup/magnific-popup.min.js"></script>
-		<script src="lib/isotope/isotope.pkgd.min.js"></script>
-
-		<!-- Contact Form JavaScript File -->
-		<script src="contactform/contactform.js"></script>
-
-		<!-- Template Main Javascript File -->
-		<script src="js/main.js"></script>
-	</body>
+    <div class="section">
+        <div class="section-title">Additional Information</div>
+        <div class="additional-info">
+            <div class="info-item">
+                <div class="info-title">Languages</div>
+                <div>English (Fluent)<br>Telugu (Native)<br>Hindi (Conversational)</div>
+            </div>
+            <div class="info-item">
+                <div class="info-title">Interests</div>
+                <div>Open source contributions<br>UI/UX design trends<br>Performance optimization</div>
+            </div>
+            <div class="info-item">
+                <div class="info-title">Availability</div>
+                <div>Immediate start<br>Remote & hybrid<br>work arrangements</div>
+            </div>
+        </div>
+    </div>
+</body>
 </html>
